@@ -1,0 +1,76 @@
+<%= stylesheet_link_tag "bootstrap.css" %>
+<%= form_for @coupon, :html => { :multipart => true } do |f| %>
+    <% if @coupon.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@coupon.errors.count, "error") %> prohibited this coupon from being saved:</h2>
+
+          <ul>
+            <% @coupon.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :Brand_name %>
+      <%= f.text_field :Brand_name %>
+    </div><br />
+
+    <!--<div class="field">-->
+    <%= form_for (@coupon), :url=>{:action=>'create'}, :html=>{:multipart=>true} do |form| %><br/>
+        <!--<%= form.label :Brand_image %>-->
+        <!--<%= form.file_field :image_file %>-->
+        <!--<%= form.submit %>-->
+        <!--<% end %>-->
+    <!--</div>-->
+    <!--upload image using paperclip -->
+    <div class="field">
+        <%= f.label :Coupon_image %>
+        <%= f.file_field :Brand_image%>
+    </div><br/><br/>
+
+    <div class="field">
+      <%= f.label :Offer_desc %>
+      <%= f.text_area :Offer_desc, rows: 6 %>
+    </div><br />
+
+    <div class="field">
+      <%= f.label :Saving_amount %>
+      <%= f.text_field :Saving_amount %>
+    </div><br />
+
+    <div class="field">
+      <%= f.label :category_name %>
+      <%= collection_select(:coupon, :category_id, @categories, :id, :name, {:prompt => false })  %>
+    </div>   <br />
+
+    <div class="field">
+      <%= f.label :Start_date %>
+      <%= f.date_select :Start_date %>
+    </div><br />
+
+    <div class="field">
+      <%= f.label :Expiry_date %>
+      <%= f.date_select :Expiry_date %>
+    </div> <br />
+
+    <div class="field">
+      <%= f.label "Consumers & Retailers details" %>
+      <%= f.text_area :Client_details, rows: 6 %>
+    </div><br />
+
+    <div class="field">
+      <%= f.label "Client Coupon Redemption details" %>
+      <%= f.text_area :redemption_details, rows: 6 %>
+    </div><br />
+
+    <div class="field">
+      <%= f.label :Barcode_no %>
+      <%= f.number_field :Barcode_no %>
+    </div> <br />
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

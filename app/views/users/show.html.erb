@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'bootstrap' %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h3>Welcome <%= @user.email %> </h3>
+</p>
+
+
+<p>
+  <h5>Your Last Login was <%= @user.last_login.inspect %> </h5>
+</p>
+
+
+
+<li class="active"><%= link_to 'Edit your account details', edit_user_path(@user) %></li>
+
+<p>
+    <% if current_client %>
+        <li class="active"><%= link_to "Input new Coupon details", new_coupon_path %></li>
+    <% end %>
+</p>
+
+<!--<table>-->
+  <!--<tr>-->
+    <!--<th>Name</th>-->
+    <!--<th>Address</th>-->
+    <!--<th>Email</th>-->
+    <!--<th>Pay type</th>-->
+    <!--<th></th>-->
+    <!--<th></th>-->
+    <!--<th></th>-->
+  <!--</tr>-->
+
+
+<!--</table>-->
+
+</br>
+</br>
+</br>
+
+
+

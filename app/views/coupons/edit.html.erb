@@ -1,0 +1,8 @@
+<%= stylesheet_link_tag "bootstrap.css" %>
+<h1>Editing coupon</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @coupon %> |
+<%= link_to 'Back', coupons_path %>
+<%= image_tag(@coupon.image_url)%>

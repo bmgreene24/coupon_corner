@@ -1,0 +1,56 @@
+<%= form_tag 'display' %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Brand name:</b>
+  <%= @coupon.Brand_name %>
+</p>
+
+<p>
+  <b>Brand image:</b>
+  <%= @coupon.Brand_image %>
+</p>
+
+<p>
+  <b>Offer desc:</b>
+  <%= @coupon.Offer_desc %>
+</p>
+
+<p>
+  <b>Saving amount:</b>
+  <%= @coupon.Saving_amount %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @coupon.Category %>
+</p>
+
+<p>
+  <b>Coupon image:</b>
+  <%= @coupon.Coupon_image %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @coupon.Start_date %>
+</p>
+
+<p>
+  <b>Expiry date:</b>
+  <%= @coupon.Expiry_date %>
+</p>
+
+<p>
+  <b>Client details:</b>
+  <%= @coupon.Client_details %>
+</p>
+
+<p>
+  <b>Barcode no:</b>
+  <%= @coupon.Barcode_no %>
+</p>
+
+
+<%= link_to 'Edit', edit_coupon_path(@coupon) %> |
+<%= link_to 'Back', coupons_path %>

@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'bootstrap' %>
+
+<h1 align class="center">Please fill in the below details to Register</br>
+  </h1>
+<br/>
+<br/>
+<div class = "form" align = "center" >
+
+
+  <%= form_for(@client) do |f| %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.text_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Register" %>
+      </div>
+  <% end %>
+  <%= link_to 'Back', coupons_path %>
+</div>

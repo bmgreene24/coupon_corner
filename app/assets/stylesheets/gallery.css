@@ -1,0 +1,60 @@
+/*Coupon Corner Inventory page*/
+
+#apDiv1, #apDiv2 {
+	position: absolute;
+	width: 738px;
+	height: 418px;
+	z-index: 1;
+	left: 317px;
+	top: 526px;
+}
+
+#apDiv3 {
+	position: absolute;
+	width: 699px;
+	height: 115px;
+	z-index: 2;
+	left: 326px;
+	top: 204px;
+}
+#apDiv4 {
+	position: absolute;
+	width: 706px;
+	height: 90px;
+	z-index: 3;
+	left: 327px;
+	top: 409px;
+}
+#apDiv5 {
+	position: absolute;
+	width: 184px;
+	height: 103px;
+	z-index: 4;
+	left: 124px;
+	top: 83px;
+}
+
+.blueLayer {
+	background-color: @@div1Color@@;
+	height: 300px;
+	width: 300px;
+}
+
+.layer {
+	background-color: #ffffcc;
+	margin: 5px;
+	padding: 5px;
+	border-color : #67BEE9;
+	border-style: dashed;
+	border-width: 8px;
+	opacity : 0;
+	color : #333333;
+	-moz-border-radius : 0px;
+	-webkit-border-radius : 0px;
+	border-radius : 0px;
+}
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	background-image: url(images/bg_texture.gif);
+	background-repeat: repeat;	
+}

@@ -1,0 +1,83 @@
+<%= stylesheet_link_tag "bootstrap.css" %>
+
+<h1 align="center">Want to Save Money on your Weekly Grocery shop?</h1>
+<h3 align="center"><strong>Browse our Coupon Gallery</strong></h3>
+<!--<p>-->
+      <!--<%= text_field_tag :search_query, params[:search_query] %>-->
+      <!--<%= submit_tag "Search", :name => nil %>-->
+    <!--</p>-->
+
+<%= form_tag('/coupons',:method=>:get) do %>
+<h5>Category Search</h5></p><%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name",params[:category_id])%>
+<%= submit_tag "Search" %>
+<% end %>
+<%= form_tag show_multiple_coupons_path do %>
+<p align="right"><% if current_client %>
+        <a class="small blue signup button" text-color = "#ffffff" text-size = "11px" tabindex="7" href=<%= link_to "Input new Coupon", new_coupon_path %></a>
+    <% end %>
+</p>
+<p align="right"><%= submit_tag "Show selected coupons" %>
+ <table class = "table" width="980" height="305" border="2">
+  <tr border = "3">
+    <th scope="col">Brand</th>
+    <th scope="col">Brand Image</th>
+    <th scope="col">Category</th>
+    <th scope="col">Offer Description</th>
+    <th scope="col">Saving Amount</th>
+    <th scope="col">Select a Coupon</th>
+
+    </th>
+  </tr>
+
+  <% for coupon in @coupon %>
+
+      <tr>
+        <td><p align="center"><%= coupon.Brand_name %></p></td>
+        <td><p align="center">
+          <%= image_tag coupon.Brand_image.url(:thumb) %>
+          <!--<%= image_tag(coupon.Brand_image, :size => "100x100", class: 'list_Brand_image')%>  -->
+        </p>
+        </td>
+
+        <td><p align="center"><%= coupon.category.name %></p></td>
+
+
+        <td>
+          <p align="center">
+              <%= coupon.Offer_desc %>
+          </p>
+        </td>
+        <td><p align="center"><%= number_to_currency coupon.Saving_amount, :unit => "&euro;" %></p></td>
+        <!--<td><img src="<%= barcode_image_uri(coupon.Barcode_no.to_s)unless coupon.Barcode_no.to_s.nil? %>"/></td>-->
+        <!--<td><%= coupon.user_id.to_s %></td>-->
+        <td><p align="center"><%= check_box_tag("coupon_ids[]", coupon.id) %></p></td>
+
+
+        <!--<td><%= link_to 'Show', coupon %></td>-->
+        <!--<td><%= coupon.Category %></td>-->
+        <!--<td><%= coupon.Coupon_image %></td>-->
+        <!--<td><%= coupon.Start_date %></td>-->
+        <!--<td><%= coupon.Expiry_date %></td>-->
+        <!--<td><%= coupon.Client_details %></td>-->
+        <!--<td><%= coupon.Barcode_no %></td>-->
+        <td>
+          <% if current_user and current_user.admin %>
+            <td><p align="center"><%= link_to 'Show', coupon %></p></td>
+            <td><p align="center"><%= link_to 'Edit', edit_coupon_path(coupon) %></p></td>
+            <td><p align="center"><%= link_to 'Destroy', coupon, :confirm => 'Are you sure?', :method => :delete %></p></td>
+        <% end %>
+        <!--<td><%= button_to 'Add to Coupon Selection', line_items_path(:coupon_id => coupon) %></td>-->
+        </td>
+      </tr>
+  <% end %>
+</table>
+<p align = "right"><%= submit_tag "Show selected coupons" %></p>
+<br />
+<% if current_user and current_user.admin? %>
+<%= link_to 'New Coupon', new_coupon_path %>
+
+    <% end %>
+
+
+
+<% end %>

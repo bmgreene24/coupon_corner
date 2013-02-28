@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coupon Corner</title>
+  <!--<link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">-->
+  <%= stylesheet_link_tag "CC.css" %>
+  <%= stylesheet_link_tag "base.css" %>
+  <%= stylesheet_link_tag "gallery.css" %>
+
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="container">
+<!-- Start Header -->
+<div id="header">
+  <!-- Logo -->
+  <a href="/" id="logo" class="ir"></a>
+    <!-- Login/Sign up -->
+    <div id="user_auth">
+      <% if logged_in? %>
+          <a class="small black login button" href="/logout" tabindex="5" text-color = "#ffffff">
+            <span class="login">Log out</span>
+          </a>
+      <% else %>
+        <a class="small black login button" href="/login" tabindex="5">
+          <span class="login">Log in</span>
+        </a>
+        <div class="divider"></div>
+        <a class="small blue signup button" href="/pages/sign_up" tabindex="6">
+          <span class="sign_up">Sign up</span>
+        </a>
+      <% end %>
+    </div>
+
+  <!-- Primary Navigation -->
+  <div id="nav" class="v2">
+    <a href="/" class="nav_home item">HOME</a>
+    <a href="/pages/about_us" class="nav_what_is_CC item">WHAT IS COUPON CORNER?</a>
+    <a href="/coupons" class="nav_what_is_CC last item">COUPONS GALLERY</a>
+
+    <br/><br/>
+    <div class ="nav_home last small item">
+        <% if logged_in? %>
+          <%= current_user.email %><a class="divider"> |</a>
+          Last Login: <%= current_user.last_login.inspect %>
+    <% end %>
+    </div>
+    <br/>
+    <div class ="nav_home last item">
+        <% if current_user.try(:admin?) %>
+            <%= link_to "Create User", new_user_path %><a class="divider">  |</a>
+            <%= link_to "Users details", users_path %><a class="divider">  |</a>
+            <%= link_to 'Edit your Account details', current_user %>
+
+    <% end %>
+
+        <% if current_client %>
+          <li class="active"><%= link_to "Input new Coupon", new_coupon_path %></li>
+        <% end %>
+    </div>
+
+
+    </div>
+
+</div><!-- End Header  -->
+
+
+
+
+
+
+<div class = "container:before">
+  <%= yield %>
+
+</div>
+
+<div class="footer v2">
+  © Copyright © 2012. www.CouponCorner.ie all rights reserved Coupon Corner 2012
+</div>
+
+
+</div>
+</body>
+</html>

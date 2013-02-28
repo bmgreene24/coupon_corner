@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag 'bootstrap' %>
+  <!--<%= stylesheet_link_tag 'pascal' %>-->
+
+</head>
+
+<body>
+<!--<div class="slider-wrapper theme-default">-->
+  <!--<div class="ribbon">-->
+
+    <div id="myCarousel" class="carousel slide" width="1000">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="active item"><%= image_tag "Image1.png" %></div>
+        <div class="item"><%= image_tag "Image2.png" %></div>
+        <div class="item"><%= image_tag "Image3.png" %></div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+
+
+      <!--<div class = "rambling-directionNav">
+        <a class = "rambling-prevNav"><</a>
+        <a class = "rambling-nextNav">></a>
+      </div>
+
+      <div class = "rambling-controlNav">
+        <a class="rambling-control active" rel="0">1</a>
+        <a class="rambling-control active" rel="1">2</a>
+        <a class="rambling-control active" rel="2">3</a>
+      </div>-->
+
+  <!--</div>-->
+<!--</div>-->
+<script src="assets/javascripts/jquery-1.7.2.js" type="text/javascript"></script>
+<%= javascript_include_tag 'bootstrap' %>
+
+
+<script>
+    /*$(window).load(function(){
+        $('#sliderId').ramblingSlider();
+    });*/
+
+    $('.carousel').carousel({
+        interval: 4000
+    })
+
+</script>
+</body>
+</html>
