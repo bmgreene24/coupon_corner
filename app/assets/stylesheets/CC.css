@@ -1,15 +1,10 @@
 /*
-Mint.com
-Author: Sirois, T
-Accessed: 17.01.2013
 
 reference: www.mint.com
 */
 
 
 /* Basic */
-
-/* ==================== */
 
 body	{
 	width: 950px;
@@ -21,8 +16,6 @@ body	{
 
 
 /* Buttons */
-
-/* ==================== */
 
 a.button	{
     display: inline-block;
@@ -97,7 +90,6 @@ a.button	{
 
 /*  Header Tags */
 
-/* ==================== */
 
 h1,h2,h3,h4,h5	{
 	-webkit-font-smoothing: antialiased;
@@ -140,7 +132,6 @@ h1 .header_para	{
 
 /* Various Typography */
 
-/* ==================== */
 
 p	{
 	font-family: Georgia, Serif;
@@ -169,13 +160,9 @@ ol, ul, dt, dl	{
     margin-left: 180px;
 }
 
-/* Layout */
-
-/* ==================== */
 
 /* Header */
 
-/* ==================== */
 
 #header	{
     background-image: url(http://127.0.0.1:3000/assets/CCheader.png);
@@ -352,7 +339,6 @@ ol, ul, dt, dl	{
 	color: #006732 !important
 }
 
-/* Skip nav link for accessibility. Skip link only shows when it has focus */
 #skip a, #skip a:hover, #skip a:visited {
   position: absolute;
     left: 0;
@@ -370,7 +356,6 @@ ol, ul, dt, dl	{
 
 /* Content */
 
-/* ==================== */
 
 #main	{
 	overflow: visible;
@@ -421,12 +406,6 @@ ol, ul, dt, dl	{
 /* coupon gallery */
 
 
-
-
-/* Homepage General */
-
-/* ==================== */
-
 #hero	{
 	width: 950px;
 }
@@ -466,9 +445,6 @@ ol, ul, dt, dl	{
 	border-right: 1px solid #e2e2e2;
 	height: 270px;
 }
-
-
-/* Footer */
 
 
 
@@ -525,6 +501,7 @@ h1.center {
 	left: 319px;	
 }
 
+/* Footer */
 
 .footer.v2 {
 	background: url(../../images/rd/home/testing/footer-sprite.png) no-repeat -898px 0;
@@ -588,8 +565,6 @@ h1.center {
 	color: #999999;
 }
 
-
- /* header v2 (adding canada to top nav) */
 
 
  #nav.v2 {
